@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <div th:replace="blocks/head :: head"></div>
+    <title>Success Page</title>
+</head>
+
+<body>
+
+    <form class="form-signin" method="post" action="/logout">
+        <h3 th:inline="text">Successful login! <br><br> Hello, user [[${#httpServletRequest.remoteUser}]]!</h3>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+    </form>
+
+<div th:insert="blocks/footer :: footer"></div>
+
+</body>
+</html>

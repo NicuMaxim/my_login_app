@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <div th:replace="blocks/head :: head"></div>
+    <title>Failed Login Page</title>
+</head>
+
+<body>
+<style>
+    body {
+        background-color: #3e3e3e;
+        color: white;
+    }
+</style>
+
+<div class="container">
+
+    <form class="form-signin" method="post" action="/login">
+        <h5>Invalid username or password</h5>
+
+        <h2 class="form-signin-heading">Please try again</h2>
+        <p>
+            <label for="email" class="sr-only">Email</label>
+            <input type="text" th:value="${errorUser}" id="email" name="username"
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                   title="Please enter a valid email address."
+                   class="form-control" placeholder="Email" required autofocus>
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password"
+                   pattern="^[A-Za-z0-9_]{4,20}$"
+                   title="Password must contain only letters, numbers, and ‘_’. Length between 4 and 20 characters."
+                   class="form-control" placeholder="Password" required>
+        </p>
+        <input name="_csrf" type="hidden" value="12dcfcf6-fb81-41df-8413-7c7d10247e7f" />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+
+</body></html>

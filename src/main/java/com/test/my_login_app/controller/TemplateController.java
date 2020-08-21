@@ -27,7 +27,7 @@ public class TemplateController {
         return "hello";
     }
 
-    // failed.html is used to handle user's email on fail and show it in the login form
+    // failed.html is used to handle user's email on fail and show it in the login form:
 
         @PostMapping("/failed")
     public String LoginFailed(@ModelAttribute(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY) String user,

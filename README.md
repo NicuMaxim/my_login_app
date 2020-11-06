@@ -1,5 +1,4 @@
 # my_login_app
-Test for FusionWorks
 
 
 - Download project in ZIP archive
